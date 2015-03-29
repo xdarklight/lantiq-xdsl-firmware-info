@@ -32,6 +32,35 @@ function show_help() {
 	echo -e "${PROG_NAME} usage:\n	-p	Path to the directory in which the firmware files are stored - defaults to 'pwd'\n	-v	Verbose output - defaults to 'off'\n	-h	Show this help"
 }
 
+function detect_annex() {
+	local FW_VERSION="${1}"
+
+	case "${FW_VERSION: -1}" in
+		"1")
+			echo "A"
+			;;
+		"2")
+			echo "B"
+			;;
+		"6")
+			echo "(VDSL)"
+			;;
+		"7")
+			echo "(VDSL)"
+			;;
+		*)
+			echo "(unknown)"
+			;;
+	esac
+}
+
+function format_adsl_fw_version() {
+	local FW_VERSION="${1}"
+	local ANNEX=$(detect_annex "${FW_VERSION}")
+
+	echo "ADSL version: ${FW_VERSION} (annex ${ANNEX})"
+}
+
 while getopts "p:vh" OPT; do
 	case $OPT in
 		p)
@@ -66,7 +95,7 @@ do
 				echo "${FILENAME}: Detected non-VDSL firmware (only one version found)"
 			fi
 
-			echo "${FILENAME}: ${VERSIONS[0]}"
+			echo "${FILENAME}: $(format_adsl_fw_version "${VERSIONS[0]}")"
 			;;
 		2)
 			if [ "${VERBOSE}" -eq "1" ]
@@ -74,7 +103,7 @@ do
 				echo "${FILENAME}: Detected combined VDSL firmware (two versions found)"
 			fi
 
-			echo "${FILENAME}: VDSL version: ${VERSIONS[0]}, ADSL version: ${VERSIONS[1]}"
+			echo "${FILENAME}: VDSL version: ${VERSIONS[0]}, $(format_adsl_fw_version "${VERSIONS[1]}")"
 			;;
 		*)
 			echo "${FILENAME}: NO firmware versions found - is this a valid lantiq DSL firmware file?"
