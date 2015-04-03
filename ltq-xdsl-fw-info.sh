@@ -36,6 +36,7 @@ function print_firmware_features() {
 	local FW_VERSION="${1}"
 	local FW_DETAILS=(${FW_VERSION//./ })
 	local APPLICATION_TYPE_STR=""
+	local PLATFORM_STR=""
 
 	local PLATFORM="${FW_DETAILS[0]//[^0-9]/}"
 	local FEATURE_SET="${FW_DETAILS[1]}"
@@ -74,12 +75,41 @@ function print_firmware_features() {
 			;;
 	esac
 
-	printf "%s, version: %s.%s" "${APPLICATION_TYPE_STR}" "${MAJOR_VERSION}" "${MINOR_VERSION}"
+	case ${PLATFORM} in
+		1)
+			PLATFORM_STR="AMAZON"
+			;;
+		2)
+			PLATFORM_STR="DANUBE"
+			;;
+		3)
+			PLATFORM_STR="AMAZON-SE"
+			;;
+		4)
+			PLATFORM_STR="ARX100"
+			;;
+		5)
+			PLATFORM_STR="VRX200"
+			;;
+		6)
+			PLATFORM_STR="ARX300"
+			;;
+		7)
+			PLATFORM_STR="VRX300"
+			;;
+		9)
+			PLATFORM_STR="VINAX1X (Vinax Revision 1.1 - 1.3)"
+			;;
+		*)
+			PLATFORM_STR="UNKNOWN platform (${PLATFORM})"
+	esac
+
+	printf "%s for %s, version: %s.%s" "${APPLICATION_TYPE_STR}" "${PLATFORM_STR}" "${MAJOR_VERSION}" "${MINOR_VERSION}"
 
 	if [ "${VERBOSE}" -eq "1" ]
 	then
-		printf " (VERBOSE: raw version: %s, PLATFORM: %s, FEATURE_SET: %s, RELEASE_STATUS: %s)"\
-			"${FW_VERSION}" "${PLATFORM}" "${FEATURE_SET}" "${RELEASE_STATUS}"
+		printf " (VERBOSE: raw version: %s, FEATURE_SET: %s, RELEASE_STATUS: %s)"\
+			"${FW_VERSION}" "${FEATURE_SET}" "${RELEASE_STATUS}"
 	fi
 
 	printf "\n"
