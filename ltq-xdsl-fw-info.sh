@@ -37,7 +37,7 @@ function print_firmware_features() {
 	local FW_DETAILS=(${FW_VERSION//./ })
 	local APPLICATION_TYPE_STR=""
 
-	local PLATFORM="${FW_DETAILS[0]}"
+	local PLATFORM="${FW_DETAILS[0]//[^0-9]/}"
 	local FEATURE_SET="${FW_DETAILS[1]}"
 	local MAJOR_VERSION="${FW_DETAILS[2]}"
 	local MINOR_VERSION="${FW_DETAILS[3]}"
