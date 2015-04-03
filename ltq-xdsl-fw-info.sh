@@ -110,19 +110,9 @@ do
 
 	case ${#VERSIONS[@]} in
 		1)
-			if [ "${VERBOSE}" -eq "1" ]
-			then
-				echo "${FILENAME}: Detected non-VDSL firmware (only one version found)"
-			fi
-
 			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}")"
 			;;
 		2)
-			if [ "${VERBOSE}" -eq "1" ]
-			then
-				echo "${FILENAME}: Detected combined VDSL firmware (two versions found)"
-			fi
-
 			echo "${FILENAME}: $(print_firmware_features ${VERSIONS[0]}) | $(print_firmware_features "${VERSIONS[1]}")"
 			;;
 		*)
