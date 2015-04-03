@@ -66,6 +66,9 @@ function print_firmware_features() {
 		6)
 			APPLICATION_TYPE_STR="VDSL over IDSN"
 			;;
+		7)
+			APPLICATION_TYPE_STR="VDSL over ISDN incl. vectoring support"
+			;;
 		*)
 			APPLICATION_TYPE_STR="UNKNOWN application type (${APPLICATION_TYPE})"
 			;;
