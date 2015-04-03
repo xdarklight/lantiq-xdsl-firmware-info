@@ -151,8 +151,6 @@ while getopts "p:vh" OPT; do
 	esac
 done
 
-echo find "${FILEPATH}" -type f -name "*.bin"
-
 find "${FILEPATH}" -type f -print0 | while read -d $'\0' FILE
 do
 	FILENAME=$(basename "${FILE}")
