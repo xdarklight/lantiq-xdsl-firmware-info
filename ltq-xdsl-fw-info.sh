@@ -36,6 +36,7 @@ function print_firmware_features() {
 	local FW_VERSION="${1}"
 	local FW_DETAILS=(${FW_VERSION//./ })
 	local APPLICATION_TYPE_STR=""
+	local RELEASE_STATUS_STR=""
 	local PLATFORM_STR=""
 
 	local PLATFORM="${FW_DETAILS[0]//[^0-9]/}"
@@ -102,14 +103,30 @@ function print_firmware_features() {
 			;;
 		*)
 			PLATFORM_STR="UNKNOWN platform (${PLATFORM})"
+			;;
+	esac
+
+	case ${RELEASE_STATUS} in
+		0)
+			RELEASE_STATUS_STR="Release"
+			;;
+		1)
+			RELEASE_STATUS_STR="Pre-Release"
+			;;
+		2)
+			RELEASE_STATUS_STR="Development"
+			;;
+		*)
+			RELEASE_STATUS_STR="UNKONWN release status (${RELEASE_STATUS})"
+			;;
 	esac
 
 	printf "%s for %s, version: %s.%s" "${APPLICATION_TYPE_STR}" "${PLATFORM_STR}" "${MAJOR_VERSION}" "${MINOR_VERSION}"
 
 	if [ "${VERBOSE}" -eq "1" ]
 	then
-		printf " (VERBOSE: raw version: %s, FEATURE_SET: %s, RELEASE_STATUS: %s)"\
-			"${FW_VERSION}" "${FEATURE_SET}" "${RELEASE_STATUS}"
+		printf " (VERBOSE: raw version: %s, FEATURE_SET: %s, %s version)"\
+			"${FW_VERSION}" "${FEATURE_SET}" "${RELEASE_STATUS_STR}"
 	fi
 
 	printf "\n"
