@@ -113,7 +113,7 @@ do
 			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}")"
 			;;
 		2)
-			echo "${FILENAME}: $(print_firmware_features ${VERSIONS[0]}) | $(print_firmware_features "${VERSIONS[1]}")"
+			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}") | $(print_firmware_features "${VERSIONS[1]}")"
 			;;
 		*)
 			echo "${FILENAME}: NO firmware versions found - is this a valid lantiq DSL firmware file?"
