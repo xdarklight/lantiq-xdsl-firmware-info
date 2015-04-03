@@ -32,33 +32,53 @@ function show_help() {
 	echo -e "${PROG_NAME} usage:\n	-p	Path to the directory in which the firmware files are stored - defaults to 'pwd'\n	-v	Verbose output - defaults to 'off'\n	-h	Show this help"
 }
 
-function detect_annex() {
+function print_firmware_features() {
 	local FW_VERSION="${1}"
+	local FW_DETAILS=(${FW_VERSION//./ })
+	local APPLICATION_TYPE_STR=""
 
-	case "${FW_VERSION: -1}" in
-		"1")
-			echo "A"
+	local PLATFORM="${FW_DETAILS[0]}"
+	local FEATURE_SET="${FW_DETAILS[1]}"
+	local MAJOR_VERSION="${FW_DETAILS[2]}"
+	local MINOR_VERSION="${FW_DETAILS[3]}"
+	local RELEASE_STATUS="${FW_DETAILS[4]}"
+	local APPLICATION_TYPE="${FW_DETAILS[5]}"
+
+	case ${APPLICATION_TYPE} in
+		0)
+			APPLICATION_TYPE_STR="ADSL Annex B/J"
 			;;
-		"2")
-			echo "B"
+		1)
+			APPLICATION_TYPE_STR="ADSL Annex A"
 			;;
-		"6")
-			echo "(VDSL)"
+		2)
+			APPLICATION_TYPE_STR="ADSL Annex B"
 			;;
-		"7")
-			echo "(VDSL)"
+		3)
+			APPLICATION_TYPE_STR="Reserved 1"
+			;;
+		4)
+			APPLICATION_TYPE_STR="Reserved 2"
+			;;
+		5)
+			APPLICATION_TYPE_STR="VDSL over POTS"
+			;;
+		6)
+			APPLICATION_TYPE_STR="VDSL over IDSN"
 			;;
 		*)
-			echo "(unknown)"
+			APPLICATION_TYPE_STR="UNKNOWN application type (${APPLICATION_TYPE})"
 			;;
 	esac
-}
 
-function format_adsl_fw_version() {
-	local FW_VERSION="${1}"
-	local ANNEX=$(detect_annex "${FW_VERSION}")
+	printf "${APPLICATION_TYPE_STR}, version: ${MAJOR_VERSION}.${MINOR_VERSION}"
 
-	echo "ADSL version: ${FW_VERSION} (annex ${ANNEX})"
+	if [ "${VERBOSE}" -eq "1" ]
+	then
+		printf " (VERBOSE: raw version: ${FW_VERSION}, PLATFORM: ${PLATFORM}, FEATURE_SET: ${FEATURE_SET}, RELEASE_STATUS: ${RELEASE_STATUS})"
+	fi
+
+	printf "\n"
 }
 
 while getopts "p:vh" OPT; do
@@ -95,7 +115,7 @@ do
 				echo "${FILENAME}: Detected non-VDSL firmware (only one version found)"
 			fi
 
-			echo "${FILENAME}: $(format_adsl_fw_version "${VERSIONS[0]}")"
+			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}")"
 			;;
 		2)
 			if [ "${VERBOSE}" -eq "1" ]
@@ -103,7 +123,7 @@ do
 				echo "${FILENAME}: Detected combined VDSL firmware (two versions found)"
 			fi
 
-			echo "${FILENAME}: VDSL version: ${VERSIONS[0]}, $(format_adsl_fw_version "${VERSIONS[1]}")"
+			echo "${FILENAME}: $(print_firmware_features ${VERSIONS[0]}) | $(print_firmware_features "${VERSIONS[1]}")"
 			;;
 		*)
 			echo "${FILENAME}: NO firmware versions found - is this a valid lantiq DSL firmware file?"
