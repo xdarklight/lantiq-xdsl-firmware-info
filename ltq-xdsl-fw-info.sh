@@ -161,7 +161,14 @@ do
 
 	case ${#VERSIONS[@]} in
 		1)
-			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}")"
+			read -r -n 4 FILE_HEADER < "${FILE}"
+
+			if [ "${FILE_HEADER//[^ELF]/}" = "ELF" ]
+			then
+				echo "${FILENAME}: Driver / tool version ${VERSIONS[0]}"
+			else
+				echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}")"
+			fi
 			;;
 		2)
 			echo "${FILENAME}: $(print_firmware_features "${VERSIONS[0]}") | $(print_firmware_features "${VERSIONS[1]}")"
