@@ -71,11 +71,12 @@ function print_firmware_features() {
 			;;
 	esac
 
-	printf "${APPLICATION_TYPE_STR}, version: ${MAJOR_VERSION}.${MINOR_VERSION}"
+	printf "%s, version: %s.%s" "${APPLICATION_TYPE_STR}" "${MAJOR_VERSION}" "${MINOR_VERSION}"
 
 	if [ "${VERBOSE}" -eq "1" ]
 	then
-		printf " (VERBOSE: raw version: ${FW_VERSION}, PLATFORM: ${PLATFORM}, FEATURE_SET: ${FEATURE_SET}, RELEASE_STATUS: ${RELEASE_STATUS})"
+		printf " (VERBOSE: raw version: %s, PLATFORM: %s, FEATURE_SET: %s, RELEASE_STATUS: %s)"\
+			"${FW_VERSION}" "${PLATFORM}" "${FEATURE_SET}" "${RELEASE_STATUS}"
 	fi
 
 	printf "\n"
