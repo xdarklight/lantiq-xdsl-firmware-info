@@ -128,7 +128,7 @@ function print_firmware_features() {
 			;;
 	esac
 
-	printf "%s for %s, version: %s/%s.%s" \
+	printf "%s for %s, version: %s.%s.%s" \
 		"${APPLICATION_TYPE_STR}" "${PLATFORM_STR}" \
 		"${FEATURE_SET}" "${MAJOR_VERSION}" "${MINOR_VERSION}"
 
