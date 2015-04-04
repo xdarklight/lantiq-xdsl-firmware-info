@@ -29,7 +29,14 @@ FILEPATH=$(pwd)
 VERBOSE=0
 
 function show_help() {
-	echo -e "${PROG_NAME} usage:\n	-p	Path to the directory in which the firmware files are stored - defaults to 'pwd'\n	-v	Verbose output - defaults to 'off'\n	-h	Show this help"
+	read -d '' HELP_TEXT <<"EOF"
+%s usage:
+	-p	Path to the directory in which the firmware files are stored - defaults to 'pwd'
+	-v	Enable verbose output - defaults to 'off'
+	-h	Show this help
+EOF
+
+	printf "${HELP_TEXT}\n" "${PROG_NAME}"
 }
 
 function print_firmware_features() {
