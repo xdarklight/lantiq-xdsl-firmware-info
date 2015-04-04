@@ -30,13 +30,12 @@ VERBOSE=0
 
 function show_help() {
 	read -d '' HELP_TEXT <<"EOF"
-%s usage:
 	-p	Path to the directory in which the firmware files are stored - defaults to 'pwd'
 	-v	Enable verbose output - defaults to 'off'
 	-h	Show this help
 EOF
 
-	printf "${HELP_TEXT}\n" "${PROG_NAME}"
+	printf "%s usage:\n%s\n" "${PROG_NAME}" "${HELP_TEXT}"
 }
 
 function print_firmware_features() {
