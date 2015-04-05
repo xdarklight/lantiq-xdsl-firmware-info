@@ -12,6 +12,7 @@ layout: default
 			<tr>
 				<th>File version</th>
 				<th>sha1sum</th>
+				<th>Filesize</th>
 				<th>Firmware Version</th>
 				<th>Application Type</th>
 				<th>Release Type</th>
@@ -29,6 +30,7 @@ layout: default
 
 					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].version }}</td>
 					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].sha1sum }}</td>
+					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].filesize }}</td>
 					{% include firmwaredetails.html %}
 					{% include downloadcolumn.html %}
 				</tr>
