@@ -253,7 +253,8 @@ do
 		*)
 			if [ "${VERBOSE}" -eq "1" ]
 			then
-				echo "NO firmware versions found - is this a valid lantiq DSL firmware file?"
+				printf "%s: NO firmware versions found - is this a valid lantiq DSL firmware file?\n" \
+					"${FILENAME}"
 			fi
 			;;
 	esac
