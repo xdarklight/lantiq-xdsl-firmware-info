@@ -1,0 +1,32 @@
+downloads:
+    -
+        url: http://btsupport.custhelp.com/app/answers/detail/a_id/47021/c/5703
+        extractionsteps: >
+                <pre>
+                    unzip "downloaded_filename"
+                    sh install.sh
+                    # make your way through the installer
+                    # get the password for the file from jpkg_sagem_homehub5_vrx.lic.gpl, it is the value from the last column
+                    jpkg ~/.jpkg_cache/rg-vendor-lantiq-xway_4.7.5.1.83.8.173.1.4_src.ejpkg --password INSERT_PW_HERE --ejpkg2jpkg
+                    tar -xf rg-vendor-lantiq-xway_4.7.5.1.83.8.173.1.4_src.jpkg
+                </pre>
+                The xDSL firmware file can be found in "rg/vendor/lantiq/xway/modules/dsl_vr9_firmware_xdsl"
+filename: xcpe_565007_561B01.bin
+version: 5.6.5.0.0.7-5.6.1.B.0.1
+sha1sum: 2433447e9f0e575d621f324b7567e6e4e440dfa6
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 6.5.0
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 6.1.B
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
