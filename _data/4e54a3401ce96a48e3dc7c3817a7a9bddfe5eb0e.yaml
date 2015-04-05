@@ -1,0 +1,38 @@
+downloads:
+    -
+        url: ftp://ftp.draytek.com/Vigor2760/Firmware/modem%20code/Vigor2760_AnnexB_533d06_535902.zip
+        extractionsteps: >
+            <pre>
+                unzip "downloaded_filename"
+                TEMP_FILE=$(mktemp)
+                tail -c+65 < *.dsl > $TEMP_FILE
+                unsquashfs $TEMP_FILE
+            </pre>
+            The xDSL firmware file is stored in the "squashfs-root" directory
+extractionsteps: >
+    <pre>
+        unzip "downloaded_filename"
+        TEMP_FILE=$(mktemp)
+        tail -c+65 < *.dsl > $TEMP_FILE
+        unsquashfs $TEMP_FILE
+    </pre>
+    The xDSL firmware file is stored in the "squashfs-root" directory
+filename: xcpe_hw.bin
+version: V_5.3.3.D.0.6-5.3.5.9.0.2
+sha1sum: 4e54a3401ce96a48e3dc7c3817a7a9bddfe5eb0e
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over IDSN
+    VERSION_STR: 3.3.D
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 2
+    APPLICATION_TYPE_STR: ADSL Annex B
+    VERSION_STR: 3.5.9
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release

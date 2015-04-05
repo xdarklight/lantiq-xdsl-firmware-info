@@ -1,0 +1,28 @@
+downloads:
+    -
+        url: https://www.openreach.co.uk/orpg/home/products/super-fastfibreaccess/super-fastfibreaccess/landrgnu/downloads/code/ECI_Arcadyan_VDSL_modem.zip
+        extractionsteps: >
+                <pre>
+                    unzip "downloaded_filename"
+                    tar -xf ECI Arcadyan VDSL vg3503j-gpl-open-source.tgz
+                </pre>
+                The xDSL firmware file can be found in "dl/dsl_vr9_firmware_xdsl-05.04.06.13.01.06_05.04.02.09.01.01.tar.gz"
+filename: xcpe_hw.bin
+version: 5.4.6.D.1.6-5.4.2.9.1.1
+sha1sum: 1561f6bc607650dc8af0be5697aa4d7eead262a6
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over IDSN
+    VERSION_STR: 4.6.D
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 4.2.9
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
