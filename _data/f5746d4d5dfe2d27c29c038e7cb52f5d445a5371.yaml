@@ -12,6 +12,7 @@ downloads:
 filename: xcpe_hw.bin
 version: V_5.3.1.A.1.6-5.3.3.0.1.1
 sha1sum: f5746d4d5dfe2d27c29c038e7cb52f5d445a5371
+filesize: 760192
 Firmware1:
     PLATFORM: 5
     PLATFORM_STR: VRX200
