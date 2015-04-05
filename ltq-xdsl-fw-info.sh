@@ -218,6 +218,8 @@ do
 					print_firmware_features
 				fi
 			fi
+
+			printf "\n"
 			;;
 		2)
 			parse_firmware_features "${VERSIONS[0]}"
@@ -245,13 +247,16 @@ do
 				printf " | "
 				print_firmware_features
 			fi
+
+			printf "\n"
 			;;
 		*)
-			printf "NO firmware versions found - is this a valid lantiq DSL firmware file?"
+			if [ "${VERBOSE}" -eq "1" ]
+			then
+				echo "NO firmware versions found - is this a valid lantiq DSL firmware file?"
+			fi
 			;;
 	esac
 
 	unexport_firmware_features
-
-	printf "\n"
 done
