@@ -165,6 +165,17 @@ function print_firmware_features_verbose() {
 	printf "	RELEASE_STATUS_STR: %s\n" "${RELEASE_STATUS_STR}"
 }
 
+function print_firmware_file_info_verbose {
+	local PATH_TO_FILE="${1}"
+	local FILE_VERSION="${2}"
+
+	printf "filename: %s\nversion: %s\nsha1sum: %s\nfilesize: %s\n" \
+		"$(basename "${PATH_TO_FILE}")" \
+		"${FILE_VERSION}" \
+		"$(get_sha1sum "${PATH_TO_FILE}")" \
+		"$(stat --printf="%s" "${PATH_TO_FILE}")"
+}
+
 function get_sha1sum() {
 	sha1sum "${1}" | cut -d' ' -f1
 }
@@ -208,10 +219,7 @@ do
 
 				if [ "${VERBOSE}" -eq "1" ]
 				then
-					printf "filename: %s\nversion: %s\nsha1sum: %s\n" \
-						"${FILENAME}" \
-						"${VERSIONS[0]}" \
-						"$(get_sha1sum "${FILE}")"
+					print_firmware_file_info_verbose "${FILE}" "${VERSIONS[0]}"
 					print_firmware_features_verbose
 				else
 					printf "%s: " "${FILENAME}"
@@ -226,10 +234,7 @@ do
 
 			if [ "${VERBOSE}" -eq "1" ]
 			then
-				printf "filename: %s\nversion: %s\nsha1sum: %s\n" \
-					"${FILENAME}" \
-					"${VERSIONS[0]}-${VERSIONS[1]}" \
-					"$(get_sha1sum "${FILE}")"
+				print_firmware_file_info_verbose "${FILE}" "${VERSIONS[0]}-${VERSIONS[1]}"
 				echo "Firmware1:"
 				print_firmware_features_verbose
 			else
