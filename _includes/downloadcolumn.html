@@ -1,0 +1,40 @@
+<td rowspan="{{ rowSpan }}">
+	<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-dialog-{{ firmware[1].sha1sum }}" aria-expanded="false" aria-controls="modal-dialog-{{ firmware[1].sha1sum }}">
+		<span class="glyphicon glyphicon-download"></span>
+		Show downloads
+	</button>
+
+	<div id="modal-dialog-{{ firmware[1].sha1sum }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title">Downloads for {{ firmware[1].version }}</h4>
+				</div>
+				<div class="modal-body">
+					{% for download in firmware[1].downloads %}
+						<div style="margin: 0% 3% 3% 3%">
+							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" class="btn" style="padding: 0; text-overflow: ellipsis; overflow: hidden; max-width: 98%;">
+								<span class="glyphicon glyphicon-download"></span>
+								{{ download.url }}
+							</a>
+							<br />
+							<br />
+							{% if download.extractionsteps %}
+								<h4>Extracting the source files:</h4>
+								<div class="highlight" style="margin: 2% 2% 2% 2%">
+									{{ download.extractionsteps }}
+								</div>
+							{% endif %}
+						</div>
+						{% if forloop.index > 0 %}
+							<hr />
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</td>

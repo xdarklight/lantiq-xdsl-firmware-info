@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<h1><b>lantiq xDSL firmware information</b></h1>
+
+<div>
+	<h2><small>Firmwares for</small> VRX200:</h2>
+
+	<div class="table-responsive">
+		<table class="table table-hover">
+			<tr>
+				<th>File version</th>
+				<th>sha1sum</th>
+				<th>Firmware Version</th>
+				<th>Application Type</th>
+				<th>Release Type</th>
+				<th>Where to download?</th>
+			</tr>
+			{% for firmware in site.data %}
+				<tr>
+					{% if firmware[1].Firmware2 %}
+						{% assign rowSpan = 2 %}
+					{% else %}
+						{% assign rowSpan = 1 %}
+					{% endif %}
+
+					{% assign firmwareData = firmware[1].Firmware1 %}
+
+					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].version }}</td>
+					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].sha1sum }}</td>
+					{% include firmwaredetails.html %}
+					{% include downloadcolumn.html %}
+				</tr>
+				{% if firmware[1].Firmware2 %}
+					<tr>
+						{% assign firmwareData = firmware[1].Firmware2 %}
+
+						{% include firmwaredetails.html %}
+					</tr>
+				{% endif %}
+			{% endfor %}
+		</table>
+	</div>
+</div>

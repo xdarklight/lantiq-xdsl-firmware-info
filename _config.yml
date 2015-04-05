@@ -1,0 +1,15 @@
+# Site settings
+title: lantiq xDSL firmware information
+email: martin.blumenstingl@googlemail.com
+description: > # this means to ignore newlines until "baseurl:"
+  An (incomplete) list of firmware files for lantiq xDSL modems
+baseurl: ""
+url: "https://xdarklight.github.io/lantiq-xdsl-firmware-info"
+github_username: xdarklight
+
+# Build settings
+markdown: kramdown
+
+# Github settings
+safe: true
+lsi: false
