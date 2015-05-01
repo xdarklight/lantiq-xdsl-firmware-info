@@ -1,0 +1,29 @@
+downloads:
+    -
+        url: https://www.telekom.de/dlp/eki/downloads/Speedport/Speedport%20W%20921V/Firmware_Speedport_W921V_1.34.000.bin
+        extractionsteps: >
+            <ol>
+            <li>Rename the downloaded file to <code>Firmware_Speedport_W921V_1.21.000.bin</code> and copy it to /tmp/</li>
+            <li>Download the source of the vdsl_fw_install tool from <a href="https://dev.openwrt.org/browser/trunk/package/kernel/lantiq/ltq-vdsl-fw/src?rev=45275">https://dev.openwrt.org/browser/trunk/package/kernel/lantiq/ltq-vdsl-fw/src?rev=45275</a></li>
+            <li>In the source directory: make && ./w921v_fw_cutter</li>
+            <li>The result can then be found in /tmp/vr9_dsl_fw_annex_b.bin</li>
+filename: vr9_dsl_fw_annex_b.bin
+version: 5.6.7.6.1.7-5.6.7.2.1.2
+sha1sum: 1e472dad0eda88281af7c00cd3f49fcc29d4fa83
+filesize: 877836
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 6.7.6
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 2
+    APPLICATION_TYPE_STR: ADSL Annex B
+    VERSION_STR: 6.7.2
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
