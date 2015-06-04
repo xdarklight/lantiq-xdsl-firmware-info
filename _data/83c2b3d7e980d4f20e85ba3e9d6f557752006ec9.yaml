@@ -1,0 +1,30 @@
+downloads:
+    -
+        url: http://www.tp-link.com/resources/software/TD-W9980_V1_150507.zip
+        extractionsteps: >
+                <pre>
+                    unzip "TD-W9980B(DE_V1_150519.zip"
+                    binwalk -e "TD-W9980B(DE)v1_0.6.0_2.10_up_boot(150519)_2015-05-19_16.01.15.bin"
+                    unsquashfs "_TD-W9980B(DE)v1_0.6.0_2.10_up_boot(150519)_2015-05-19_16.01.15.bin.extracted/160200.squashfs"
+                </pre>
+                The xDSL firmware file can be found in "TD-W9980B(DE)v1_0.6.0_2.10_up_boot(150519)_2015-05-19_16.01.15.bin.extracted/squashfs-root/firmware/"
+filename: xcpe_573E16_571502_ISDN.bin
+version: 5.7.3.E.1.6-5.7.1.5.0.2
+sha1sum: 83c2b3d7e980d4f20e85ba3e9d6f557752006ec9
+filesize: 904516
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over IDSN
+    VERSION_STR: 7.3.E
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 2
+    APPLICATION_TYPE_STR: ADSL Annex B
+    VERSION_STR: 7.1.5
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
