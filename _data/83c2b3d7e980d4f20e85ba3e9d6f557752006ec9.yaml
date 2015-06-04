@@ -1,6 +1,6 @@
 downloads:
     -
-        url: http://www.tp-link.com/resources/software/TD-W9980_V1_150507.zip
+        url: http://www.tp-link.de/resources/software/TD-W9980B(DE_V1_150519.zip
         extractionsteps: >
                 <pre>
                     unzip "TD-W9980B(DE_V1_150519.zip"
