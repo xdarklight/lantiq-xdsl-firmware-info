@@ -1,0 +1,32 @@
+downloads:
+    -
+        url: http://ftp.avm.de/fritz.box/fritzbox.wlan_3370/firmware/deutsch/FRITZ.Box_WLAN_3370.103.06.30.image
+        extractionsteps: >
+                <pre>
+                    7z e FRITZ.Box_WLAN_3370.103.06.30.image -r filesystem.image
+                    7z e filesystem.image filesystem_core.squashfs
+                    7z e filesystem_core.squashfs lib/modules/dsp_vr9/*
+                    
+                    bspatch vr9-B-dsl.bin vr9-A-dsl.bin vr9-A-dsl.bin.bsdiff
+                    md5sum -c vr9-A-dsl.bin.md5sum
+                </pre>
+filename: vr9-A-dsl.bin
+version: 5.7.4.4.1.7-5.7.1.8.0.1
+sha1sum: 77a3e77a9f91a16e9edea4fb693b9d917c7b4c61
+filesize: 900864
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 7.4.4
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 7.1.8
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
