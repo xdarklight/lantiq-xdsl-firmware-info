@@ -202,7 +202,7 @@ done
 find "${FILEPATH}" -type f -print0 | while read -d $'\0' FILE
 do
 	FILENAME=$(basename "${FILE}")
-	VERSION_STRINGS=$(strings "${FILE}" | grep "@(#)")
+	VERSION_STRINGS=$(strings "${FILE}" | grep -o "@(#).*")
 	IFS=$'\n' read -d '' -r -a VERSIONS <<< "${VERSION_STRINGS//@(#)}"
 
 	case ${#VERSIONS[@]} in
