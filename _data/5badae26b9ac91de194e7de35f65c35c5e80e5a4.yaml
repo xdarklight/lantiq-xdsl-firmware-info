@@ -1,0 +1,30 @@
+downloads:
+    -
+        url: http://www.tp-link.us/res/down/soft/TD-W8980_V1_150514.zip
+        extractionsteps: >
+                <pre>
+                    unzip TD-W8980_V1_150514.zip
+                    cd TD-W8980_V1_150514
+                    binwalk TD-W8980v1_0.6.0_1.8_up_boot\(150514\)_2015-05-14_11.16.43.bin -e
+                </pre>
+                The xDSL firmware file can be found in "_TD-W8980v1_0.6.0_1.8_up_boot\(150514\)_2015-05-14_11.16.43.bin.extracted/squashfs-root/firmware/dsl_vr9_firmware_xdsl-05.04.08.00.00.06_05.04.04.04.00.01.bin"
+filename: dsl_vr9_firmware_xdsl-05.04.08.00.00.06_05.04.04.04.00.01.bin
+version: 5.4.8.0.0.6-5.4.4.4.0.1
+sha1sum: 5badae26b9ac91de194e7de35f65c35c5e80e5a4
+filesize: 815532
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over ISDN
+    VERSION_STR: 4.8.0
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 4.4.4
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
