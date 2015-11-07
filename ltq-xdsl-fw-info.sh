@@ -77,7 +77,7 @@ function parse_firmware_features() {
 			APPLICATION_TYPE_STR="VDSL over POTS"
 			;;
 		6)
-			APPLICATION_TYPE_STR="VDSL over IDSN"
+			APPLICATION_TYPE_STR="VDSL over ISDN"
 			;;
 		7)
 			APPLICATION_TYPE_STR="VDSL over ISDN incl. vectoring support"
