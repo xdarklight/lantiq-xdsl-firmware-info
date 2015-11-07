@@ -6,7 +6,7 @@ downloads:
                     7z e FRITZ.Box_WLAN_3370.103.06.30.image -r filesystem.image
                     7z e filesystem.image filesystem_core.squashfs
                     7z e filesystem_core.squashfs lib/modules/dsp_vr9/*
-                    
+
                     bspatch vr9-B-dsl.bin release-vr9-B-dsl.bin release-vr9-B-dsl.bin.bsdiff
                     md5sum -c release-vr9-B-dsl.bin.md5sum
                 </pre>
