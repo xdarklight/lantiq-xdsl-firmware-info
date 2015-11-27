@@ -15,6 +15,9 @@
 				</div>
 				<div class="modal-body">
 					{% for download in firmware[1].downloads %}
+						{% if forloop.first != true %}
+							<hr />
+						{% endif %}
 						<div style="margin: 0% 3% 3% 3%">
 							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" class="btn" style="padding: 0; text-overflow: ellipsis; overflow: hidden; max-width: 98%;">
 								<span class="glyphicon glyphicon-download"></span>
@@ -29,9 +32,6 @@
 								</div>
 							{% endif %}
 						</div>
-						{% if forloop.index > 0 %}
-							<hr />
-						{% endif %}
 					{% endfor %}
 				</div>
 			</div>
