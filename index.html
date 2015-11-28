@@ -28,7 +28,20 @@ layout: default
 
 					{% assign firmwareData = firmware[1].Firmware1 %}
 
-					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].version }}</td>
+					{% assign isRedistributable = false %}
+					{% for download in firmware[1].downloads %}
+						{% if download.redistributable == true %}
+							{% assign isRedistributable = true %}
+						{% endif %}
+					{% endfor %}
+
+					<td rowspan="{{ rowSpan }}" class="text-nowrap">
+						{{ firmware[1].version }}
+
+						{% if isRedistributable %}
+							<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
+						{% endif %}
+					</td>
 					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].sha1sum }}</td>
 					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].filesize }}</td>
 					{% include firmwaredetails.html %}

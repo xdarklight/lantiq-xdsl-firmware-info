@@ -19,12 +19,20 @@
 							<hr />
 						{% endif %}
 						<div style="margin: 0% 3% 3% 3%">
-							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" class="btn" style="padding: 0; text-overflow: ellipsis; overflow: hidden; max-width: 98%;">
+							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" class="btn" style="padding: 0; text-overflow: ellipsis; overflow: hidden; max-width: 95%;">
 								<span class="glyphicon glyphicon-download"></span>
 								{{ download.url }}
 							</a>
+
+							{% if download.redistributable == true %}
+								<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
+							{% else %}
+								<span class="glyphicon glyphicon-wrench" title="Non-redistributable version"></span>
+							{% endif %}
+
 							<br />
 							<br />
+
 							{% if download.extractionsteps %}
 								<h4>Extracting the source files:</h4>
 								<div class="highlight" style="margin: 2% 2% 2% 2%">
