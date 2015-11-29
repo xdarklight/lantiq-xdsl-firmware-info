@@ -1,5 +1,5 @@
 # Site settings
-title: lantiq xDSL firmware information
+title: Lantiq xDSL firmware information
 email: martin.blumenstingl@googlemail.com
 description: > # this means to ignore newlines until "baseurl:"
   An (incomplete) list of firmware files for lantiq xDSL modems
