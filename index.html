@@ -5,56 +5,59 @@ layout: default
 <h1><b>Lantiq xDSL firmware information</b></h1>
 
 <div>
-	<h2><small>Firmware files for</small> VRX200:</h2>
-
 	<div class="table-responsive">
 		<table class="table table-hover">
-			<tr>
-				<th>File version</th>
-				<th>sha1sum</th>
-				<th>Filesize</th>
-				<th>Firmware Version</th>
-				<th>Application Type</th>
-				<th>Release Type</th>
-				<th>Where to download?</th>
-			</tr>
-			{% for firmware in site.data %}
+			<caption class="h2"><small>xDSL firmware files for</small> VRX200:</caption>
+			<thead>
 				<tr>
-					{% if firmware[1].Firmware2 %}
-						{% assign rowSpan = 2 %}
-					{% else %}
-						{% assign rowSpan = 1 %}
-					{% endif %}
-
-					{% assign firmwareData = firmware[1].Firmware1 %}
-
-					{% assign isRedistributable = false %}
-					{% for download in firmware[1].downloads %}
-						{% if download.redistributable == true %}
-							{% assign isRedistributable = true %}
-						{% endif %}
-					{% endfor %}
-
-					<td rowspan="{{ rowSpan }}" class="text-nowrap">
-						{{ firmware[1].version }}
-
-						{% if isRedistributable %}
-							<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
-						{% endif %}
-					</td>
-					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].sha1sum }}</td>
-					<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].filesize }}</td>
-					{% include firmwaredetails.html %}
-					{% include downloadcolumn.html %}
+					<th>File version</th>
+					<th>sha1sum</th>
+					<th>Filesize</th>
+					<th>Firmware Version</th>
+					<th>Application Type</th>
+					<th>Release Type</th>
+					<th>Where to download?</th>
 				</tr>
-				{% if firmware[1].Firmware2 %}
+			</thead>
+			<tbody>
+				{% for firmware in site.data %}
 					<tr>
-						{% assign firmwareData = firmware[1].Firmware2 %}
+						{% if firmware[1].Firmware2 %}
+							{% assign rowSpan = 2 %}
+						{% else %}
+							{% assign rowSpan = 1 %}
+						{% endif %}
 
+						{% assign firmwareData = firmware[1].Firmware1 %}
+
+						{% assign isRedistributable = false %}
+						{% for download in firmware[1].downloads %}
+							{% if download.redistributable == true %}
+								{% assign isRedistributable = true %}
+							{% endif %}
+						{% endfor %}
+
+						<td rowspan="{{ rowSpan }}" class="text-nowrap">
+							{{ firmware[1].version }}
+
+							{% if isRedistributable %}
+								<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
+							{% endif %}
+						</td>
+						<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].sha1sum }}</td>
+						<td rowspan="{{ rowSpan }}" class="text-nowrap">{{ firmware[1].filesize }}</td>
 						{% include firmwaredetails.html %}
+						{% include downloadcolumn.html %}
 					</tr>
-				{% endif %}
-			{% endfor %}
+					{% if firmware[1].Firmware2 %}
+						<tr>
+							{% assign firmwareData = firmware[1].Firmware2 %}
+
+							{% include firmwaredetails.html %}
+						</tr>
+					{% endif %}
+				{% endfor %}
+			</tbody>
 		</table>
 	</div>
 	<br />
