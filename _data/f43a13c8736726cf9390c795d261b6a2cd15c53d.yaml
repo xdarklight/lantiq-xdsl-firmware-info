@@ -1,0 +1,35 @@
+downloads:
+    -
+        url: http://ftp.avm.de/fritz.box/fritzbox.7490/firmware/deutsch/FRITZ.Box_7490.113.06.50.image
+        extractionsteps: >
+                <pre>
+                    7z e FRITZ.Box_7490.113.06.50.image -r filesystem.image
+                    7z e filesystem.image filesystem_core.squashfs
+                    unsquashfs4-lzma-avm-be filesystem_core.squashfs -e lib/modules/dsp_vr9/
+
+                    bspatch squashfs-root/lib/modules/dsp_vr9/vr9-B-dsl.bin vr9-A-dsl.bin squashfs-root/lib/modules/dsp_vr9/vr9-A-dsl.bin.bsdiff
+                    md5sum -c squashfs-root/lib/modules/dsp_vr9/vr9-A-dsl.bin.md5sum
+                </pre>
+
+                unsquashfs4-lzma-avm-be is part of http://freetz.org/. You have to checkout the freetz source and build the tools to get the binary.
+filename: vr9-A-dsl.bin
+version: 5.7.5.5.1.7-5.7.1.E.1.1
+sha1sum: f43a13c8736726cf9390c795d261b6a2cd15c53d
+filesize: 912760
+Firmware1:
+        PLATFORM: 5
+        PLATFORM_STR: VRX200
+        APPLICATION_TYPE: 7
+        APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+        VERSION_STR: 7.5.5
+        RELEASE_STATUS: 1
+        RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+        PLATFORM: 5
+        PLATFORM_STR: VRX200
+        APPLICATION_TYPE: 1
+        APPLICATION_TYPE_STR: ADSL Annex A
+        VERSION_STR: 7.1.E
+        RELEASE_STATUS: 1
+        RELEASE_STATUS_STR: Pre-Release
+
