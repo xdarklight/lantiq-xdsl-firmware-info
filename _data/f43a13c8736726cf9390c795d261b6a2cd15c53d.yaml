@@ -11,7 +11,10 @@ downloads:
                     md5sum -c squashfs-root/lib/modules/dsp_vr9/vr9-A-dsl.bin.md5sum
                 </pre>
 
-                unsquashfs4-lzma-avm-be is part of http://freetz.org/. You have to checkout the freetz source and build the tools to get the binary.
+                The xDSL firmware file can be found in "squashfs-root/lib/modules/dsp_vr9/"
+
+                NOTE: unsquashfs4-lzma-avm-be is part of http://freetz.org/. You have to checkout the freetz source and build the tools (make tools) to get the binary.
+                NOTE: p7zip version 15.09 or newer is required to extract the images.
 filename: vr9-A-dsl.bin
 version: 5.7.5.5.1.7-5.7.1.E.1.1
 sha1sum: f43a13c8736726cf9390c795d261b6a2cd15c53d
