@@ -1,0 +1,26 @@
+downloads:
+    -
+        redistributable: true
+        url: http://mirror2.openwrt.org/sources/dsl_vr9_firmware_xdsl-05.08.01.08.01.06_05.08.00.0B.01.01_osc.tar.gz
+        extractionsteps: >
+                Redistribuable download, xDSL firmware is accessibly directly.
+filename: xcpe_581816_580B11.bin
+version: 5.8.1.8.1.6-5.8.0.B.1.1
+sha1sum: 7a53b2eedd36031279031a6445c63679994bcdb9
+filesize: 898952
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over ISDN
+    VERSION_STR: 8.1.8
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 8.0.B
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
