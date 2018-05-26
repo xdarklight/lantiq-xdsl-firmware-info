@@ -1,0 +1,28 @@
+downloads:
+    -
+        url: http://www.downloads.netgear.com/files/GDC/DM200/DM200_V1.0.0.52.zip
+        extractionsteps: >
+                <pre>
+                    7z e DM200_V1.0.0.52.zip
+                    7z e DM200-V1.0.0.52.img dsl_vr9_firmware_xdsl-05.07.0B.05.00.07_05.07.05.04.00.01.bin
+                </pre>
+filename: dsl_vr9_firmware_xdsl-05.07.0B.05.00.07_05.07.05.04.00.01.bin
+version: 5.7.B.5.0.7-5.7.5.4.0.1
+sha1sum: 03fd705079569e32c2c9247987e1000f6e9e2739
+filesize: 949380
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 7.B.5
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 7.5.4
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
