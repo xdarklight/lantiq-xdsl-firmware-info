@@ -1,6 +1,6 @@
 downloads:
     -
-        url: http://static.tp-link.com/res/down/soft/TD-W8970B_V1_150526.zip
+        url: https://static.tp-link.com/res/down/soft/TD-W8970B_V1_150526.zip
         extractionsteps: >
                 <pre>
                     unzip TD-W8970B_V1_150526.zip
