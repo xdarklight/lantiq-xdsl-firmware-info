@@ -4,47 +4,50 @@ title: Lantiq xDSL firmware information
 ---
 
 <div>
-	<div class="table-responsive">
-		<table class="table table-hover">
-			<caption class="h2"><small>{{ site.data.size }} xDSL firmware files for</small> VRX200:</caption>
-			<thead>
-				<tr>
-					<th>File version</th>
-					<th>sha1sum</th>
-					<th>Filesize</th>
-					<th>Firmware Version</th>
-					<th>Application Type</th>
-					<th>Release Type</th>
-					<th>Where to download?</th>
-				</tr>
-			</thead>
-			<tbody>
-				{% for firmware in site.data %}
+
+	{% for chip in site.data %}
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<caption class="h2"><small>{{ chip[1].size }} xDSL firmware files for</small> {{ chip[0] }}:</caption>
+				<thead>
 					<tr>
-						{% assign isRedistributable = false %}
-						{% for download in firmware[1].downloads %}
-							{% if download.redistributable == true %}
-								{% assign isRedistributable = true %}
-							{% endif %}
-						{% endfor %}
-
-						<td class="text-nowrap">
-							{{ firmware[1].version }}
-
-							{% if isRedistributable %}
-								<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
-							{% endif %}
-						</td>
-						<td class="text-nowrap">{{ firmware[1].sha1sum }}</td>
-						<td class="text-nowrap">{{ firmware[1].filesize }}</td>
-						{% include firmwaredetails.html %}
-						{% include downloadcolumn.html %}
+						<th>File version</th>
+						<th>sha1sum</th>
+						<th>Filesize</th>
+						<th>Firmware Version</th>
+						<th>Application Type</th>
+						<th>Release Type</th>
+						<th>Where to download?</th>
 					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	</div>
-	<br />
+				</thead>
+				<tbody>
+					{% for firmware in chip[1] %}
+						<tr>
+							{% assign isRedistributable = false %}
+							{% for download in firmware[1].downloads %}
+								{% if download.redistributable == true %}
+									{% assign isRedistributable = true %}
+								{% endif %}
+							{% endfor %}
+
+							<td class="text-nowrap">
+								{{ firmware[1].version }}
+
+								{% if isRedistributable %}
+									<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
+								{% endif %}
+							</td>
+							<td class="text-nowrap">{{ firmware[1].sha1sum }}</td>
+							<td class="text-nowrap">{{ firmware[1].filesize }}</td>
+							{% include firmwaredetails.html %}
+							{% include downloadcolumn.html %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+		<br />
+	{% endfor %}
 
 	<p class="bg-info" style="padding: 1% 1% 1% 1%">
 		All information on this page is extracted from sources that are public available on the internet.<br />
