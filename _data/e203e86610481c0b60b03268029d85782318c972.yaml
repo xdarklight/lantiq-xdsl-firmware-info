@@ -4,9 +4,10 @@ downloads:
         extractionsteps: >
             <ol>
             <li>Rename the downloaded file to <code>Firmware_Speedport_W921V_1.21.000.bin</code> and copy it to /tmp/</li>
-            <li>Download the source of the vdsl_fw_install tool from <a href="https://dev.openwrt.org/browser/trunk/package/kernel/lantiq/ltq-vdsl-fw/src?rev=45275">https://dev.openwrt.org/browser/trunk/package/kernel/lantiq/ltq-vdsl-fw/src?rev=45275</a></li>
+            <li>Download the source of the vdsl_fw_install tool from <a href="https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src;h=cb4a04dd60b4fcbbff8c76ecbe3054eea3d4fc0f">https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src;h=cb4a04dd60b4fcbbff8c76ecbe3054eea3d4fc0f</a></li>
             <li>In the source directory: make && ./w921v_fw_cutter</li>
             <li>The result can then be found in /tmp/vr9_dsl_fw_annex_b.bin</li>
+            </ol>
 filename: vr9_dsl_fw_annex_b.bin
 version: 5.6.8.4.1.7-5.6.7.2.1.2
 sha1sum: e203e86610481c0b60b03268029d85782318c972
