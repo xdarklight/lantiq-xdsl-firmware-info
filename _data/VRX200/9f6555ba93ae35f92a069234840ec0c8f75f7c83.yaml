@@ -1,0 +1,33 @@
+downloads:
+    -
+        url: https://www.tdt.de/wp-content/uploads/system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.zip
+        extractionsteps: >
+                <pre>
+                    unzip system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.zip system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.bin
+
+                    tar -xf system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.bin sysupgrade-VR2020_KANANGA/root
+
+                    unsquashfs sysupgrade-VR2020_KANANGA/root
+                </pre>
+
+                The xDSL firmware file can be found in "squashfs-root/lib/firmware"
+filename: xcpe_578C07_573A02.bin
+version: 5.7.8.C.0.7-5.7.3.A.0.2
+sha1sum: 9f6555ba93ae35f92a069234840ec0c8f75f7c83
+filesize: 913372
+Firmware1:
+        PLATFORM: 5
+        PLATFORM_STR: VRX200
+        APPLICATION_TYPE: 7
+        APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+        VERSION_STR: 7.8.C
+        RELEASE_STATUS: 0
+        RELEASE_STATUS_STR: Release
+Firmware2:
+        PLATFORM: 5
+        PLATFORM_STR: VRX200
+        APPLICATION_TYPE: 2
+        APPLICATION_TYPE_STR: ADSL Annex B
+        VERSION_STR: 7.3.A
+        RELEASE_STATUS: 0
+        RELEASE_STATUS_STR: Release
