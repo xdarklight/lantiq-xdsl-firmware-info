@@ -1,6 +1,6 @@
 downloads:
     -
-        url: https://www.tdt.de/wp-content/uploads/system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.zip
+        url: https://tdt.de/fileadmin/user_upload/downloads/Firmware/2019.08b/system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.zip
         extractionsteps: >
                 <pre>
                     unzip system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.zip system6-2019.08b-0-gdc3b00da-stable-VR2020-D-TDT.bin
