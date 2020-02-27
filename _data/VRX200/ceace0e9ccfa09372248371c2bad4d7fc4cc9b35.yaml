@@ -1,3 +1,5 @@
+downloads:
+    -
         url: https://ftp.avm.de/fritzbox/fritzbox-7490/deutschland/fritz.os/FRITZ.Box_7490-07.12.image
         extractionsteps: >
                 <pre>
