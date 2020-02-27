@@ -1,9 +1,9 @@
 downloads:
     -
-        url: https://ftp.avm.de/fritzbox/fritzbox-7412/deutschland/fritz.os/FRITZ.Box_7412.137.06.85.image
+        url: https://download.avm.de/fritzbox/fritzbox-7412/deutschland/fritz.os/FRITZ.Box_7412-06.86.image
         extractionsteps: >
                 <pre>
-                    7z e FRITZ.Box_7412.137.06.85.image -r filesystem.image
+                    7z e FRITZ.Box_7412-06.86.image -r filesystem.image
                     7z e filesystem.image filesystem_core.squashfs
                     unsquashfs4-avm-be filesystem_core.squashfs -e lib/modules/dsp_vr9/
                 </pre>
