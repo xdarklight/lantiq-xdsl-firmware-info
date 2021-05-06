@@ -1,0 +1,37 @@
+downloads:
+    -
+        url: https://download.avm.de/fritzbox/fritzbox-7430/deutschland/fritz.os/FRITZ.Box_7430-07.21.image
+        extractionsteps: >
+                <pre>
+                    7z e FRITZ.Box_7430-07.21.image -r filesystem.image
+                    unsquashfs4-avm-be filesystem.image -e filesystem_core.squashfs
+
+                    cd squashfs-root
+                    unsquashfs4-avm-be filesystem_core.squashfs -e lib/modules/dsp_vr9/
+
+                    cd squashfs-root/lib/modules/dsp_vr9/
+                    bspatch vr9-B-dsl.bin vr9-A-dsl.bin vr9-A-dsl.bin.bsdiff
+                </pre>
+
+                NOTE: unsquashfs4-avm-be is part of https://github.com/Freetz-NG/freetz-ng/. You have to checkout the freetz-ng source and build the tools (make tools) to get the binary.
+                NOTE: p7zip version 15.09 or newer is required to extract the images.
+filename: vr9-B-dsl.bin
+version: 5.9.1.4.0.7-5.9.0.D.0.2
+sha1sum: ab8aeaf0894643356fa66a87304f388f43ee31e3
+filesize: 908888
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 9.1.4
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 2
+    APPLICATION_TYPE_STR: ADSL Annex B
+    VERSION_STR: 9.0.D
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
