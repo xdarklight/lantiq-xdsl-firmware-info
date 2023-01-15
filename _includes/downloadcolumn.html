@@ -14,7 +14,7 @@
 				<div class="modal-body">
 					{% for download in firmware[1].downloads %}
 						{% if forloop.first != true %}
-							<hr />
+							<hr class="px-3" />
 						{% endif %}
 						<div>
 							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" download class="text-decoration-none">
@@ -30,10 +30,8 @@
 								{% endif %}
 							</p>
 
-							<hr />
-
 							{% if download.extractionsteps %}
-								<h4>Extracting the source files:</h4>
+								<h6>Extracting the source files:</h6>
 								<div class="highlight m-2">
 									{{ download.extractionsteps }}
 								</div>
