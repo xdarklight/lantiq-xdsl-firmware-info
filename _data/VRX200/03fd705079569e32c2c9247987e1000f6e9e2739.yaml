@@ -1,6 +1,6 @@
 downloads:
     -
-        url: http://www.downloads.netgear.com/files/GDC/DM200/DM200_V1.0.0.52.zip
+        url: https://www.downloads.netgear.com/files/GDC/DM200/DM200_V1.0.0.52.zip
         extractionsteps: >
                 <pre>
                     7z e DM200_V1.0.0.52.zip

@@ -1,6 +1,6 @@
 downloads:
     -
-        url: http://www.downloads.netgear.com/files/GPL/DM200-GPL_V1.0.0.36.tar.bz2
+        url: https://www.downloads.netgear.com/files/GPL/DM200-GPL_V1.0.0.36.tar.bz2
         extractionsteps: >
                 <pre>
                     tar -xf DM200-GPL_V1.0.0.36.tar.bz2 DM200-V1.0.0.36_gpl_src/dl/dsl_vr9_firmware_xdsl-05.07.09.05.01.07_05.07.03.0F.00.01.tar.gz
