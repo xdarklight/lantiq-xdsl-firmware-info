@@ -5,10 +5,12 @@ title: Lantiq xDSL firmware information
 
 <div>
 
-	{% for chip in site.data %}
-		<div class="table-responsive">
+	{% assign sortedChips = site.data | sort %}
+	{% for chip in sortedChips %}
+		<div class="table-responsive w-100" style="padding-left: 0.75em; padding-top: 0.75em">
+			<h2>{{ chip[1].size }} xDSL firmware files for <b>{{ chip[0] }}</b>:</h2>
 			<table class="table table-hover">
-				<caption class="h2"><small>{{ chip[1].size }} xDSL firmware files for</small> {{ chip[0] }}:</caption>
+				<caption>xDSL firmware files for {{ chip[0] }}</caption>
 				<thead>
 					<tr>
 						<th>File version</th>
@@ -20,8 +22,9 @@ title: Lantiq xDSL firmware information
 						<th>Where to download?</th>
 					</tr>
 				</thead>
-				<tbody>
-					{% for firmware in chip[1] %}
+				<tbody class="table-group-divider">
+					{% assign sortedFirmwares = chip[1] | sort %}
+					{% for firmware in sortedFirmwares %}
 						<tr>
 							{% assign isRedistributable = false %}
 							{% for download in firmware[1].downloads %}
@@ -30,15 +33,15 @@ title: Lantiq xDSL firmware information
 								{% endif %}
 							{% endfor %}
 
-							<td class="text-nowrap">
+							<td class="text-nowrap align-middle">
 								{{ firmware[1].version }}
 
 								{% if isRedistributable %}
-									<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
+									<i class="bi bi-globe" title="Redistributable version"></i>
 								{% endif %}
 							</td>
-							<td class="text-nowrap">{{ firmware[1].sha1sum }}</td>
-							<td class="text-nowrap">{{ firmware[1].filesize }}</td>
+							<td class="text-nowrap align-middle">{{ firmware[1].sha1sum }}</td>
+							<td class="text-nowrap align-middle">{{ firmware[1].filesize }}</td>
 							{% include firmwaredetails.html %}
 							{% include downloadcolumn.html %}
 						</tr>
@@ -49,12 +52,4 @@ title: Lantiq xDSL firmware information
 		<br />
 	{% endfor %}
 
-	<p class="bg-info" style="padding: 1% 1% 1% 1%">
-		All information on this page is extracted from sources that are public available on the internet.<br />
-		Most firmware files cannot be distributed here due to their license. See also <a href="https://lists.infradead.org/pipermail/openwrt-devel/2014-October/002962.html">a post on the OpenWrt mailing list</a> regarding this topic.<br />
-		<br />
-		In November 2015 Lantiq started providing the first xDSL firmware binaries with a license that permits redistribution.<br />
-		<br />
-		If you have seen a new firmware and want to get this table updated then please <a href="https://github.com/xdarklight/lantiq-xdsl-firmware-info/issues/new">create a ticket</a> with information how to extract the firmware file from a public source.
-	</p>
 </div>

@@ -1,41 +1,40 @@
-<td>
-	<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal-dialog-{{ firmware[1].sha1sum }}" aria-expanded="false" aria-controls="modal-dialog-{{ firmware[1].sha1sum }}">
-		<span class="glyphicon glyphicon-download"></span>
+<td class="align-middle">
+	<button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modal-dialog-{{ firmware[1].sha1sum }}" aria-expanded="false" aria-controls="modal-dialog-{{ firmware[1].sha1sum }}">
+		<i class="bi bi-cloud-download me-2"></i>
 		Show downloads
 	</button>
 
 	<div id="modal-dialog-{{ firmware[1].sha1sum }}" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
 					<h4 class="modal-title">Downloads for {{ firmware[1].version }}</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
 					{% for download in firmware[1].downloads %}
 						{% if forloop.first != true %}
 							<hr />
 						{% endif %}
-						<div style="margin: 0% 3% 3% 3%">
-							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" class="btn" style="padding: 0; text-overflow: ellipsis; overflow: hidden; max-width: 95%;">
-								<span class="glyphicon glyphicon-download"></span>
+						<div>
+							<a href="{{ download.url }}" title="Download {{ download.url }}" rel="nofollow" download class="text-decoration-none">
+								<i class="bi bi-cloud-download icon-big me-2"></i>
 								{{ download.url }}
 							</a>
 
-							{% if download.redistributable == true %}
-								<span class="glyphicon glyphicon-globe" title="Redistributable version"></span>
-							{% else %}
-								<span class="glyphicon glyphicon-wrench" title="Non-redistributable version"></span>
-							{% endif %}
+							<p>
+								{% if download.redistributable == true %}
+									<i class="bi bi-globe icon-big me-2" aria-hidden="true"></i> Redistributable version
+								{% else %}
+									<i class="bi bi-incognito icon-big me-2" aria-hidden="true"></i> Non-redistributable version
+								{% endif %}
+							</p>
 
-							<br />
-							<br />
+							<hr />
 
 							{% if download.extractionsteps %}
 								<h4>Extracting the source files:</h4>
-								<div class="highlight" style="margin: 2% 2% 2% 2%">
+								<div class="highlight m-2">
 									{{ download.extractionsteps }}
 								</div>
 							{% endif %}

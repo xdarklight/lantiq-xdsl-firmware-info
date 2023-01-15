@@ -4,29 +4,73 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 		<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 		<meta name="description" content="{{ site.description }}">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" crossorigin="anonymous">
 		<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+		<style type="text/css">
+			body {
+				font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+				--bs-body-font-size: 0.933333em;
+			}
+	
+			pre {
+				color: #333;
+				word-break: break-all;
+				word-wrap: break-word;
+				background-color: #f5f5f5;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				padding-top: 0.5em;
+				padding-bottom: 0.5em;
+			}
+
+			.icon-big {
+				font-size: 1.25rem;
+			}
+		</style>
 	</head>
 
-	<body style="margin-left: 20px;">
-		<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-		<a href="https://github.com/xdarklight/lantiq-xdsl-firmware-info" target="_blank">
-			<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
-		</a>
+	<body>
+		<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 		<div class="container-fluid">
 			{% if page.title %}
-				<h1><b>{{ page.title }}</b></h1>
+				<header class="py-4 px-2">
+					<h1>{{ page.title }}</h1>
+				</header>
 			{% endif %}
 
-			{{ content }}
+			<main>
+				{{ content }}
+			</main>
+
+			<hr />
+
+			<footer>
+				<div class="bg-light rounded p-3 clearfix">
+					<p>
+						All information on this page is extracted from sources that are public available on the internet.<br />
+						Most firmware files cannot be distributed here due to their license. See also <a href="https://lists.infradead.org/pipermail/openwrt-devel/2014-October/002962.html">a post on the OpenWrt mailing list</a> regarding this topic.
+					</p>
+					<p>
+						In November 2015 Lantiq started providing the first xDSL firmware binaries with a license that permits redistribution.
+					</p>
+					<p class="float-start">
+						If you have seen a new firmware and want to get this table updated then please <i class="bi bi-pencil" aria-hidden="true"></i> <a href="https://github.com/xdarklight/lantiq-xdsl-firmware-info/issues/new">create a ticket</a> with information how to extract the firmware file from a public source.
+					</p>
+					<span class="float-end px-3">
+						<a href="https://github.com/xdarklight/lantiq-xdsl-firmware-info" target="_blank" class="text-decoration-none link-dark">
+							<i class="bi bi-github text-dark icon-big"></i>
+							Fork me on GitHub
+						</a>
+					</span>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>
