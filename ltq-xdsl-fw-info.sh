@@ -109,6 +109,9 @@ function parse_firmware_features() {
 		7)
 			PLATFORM_STR="VRX300"
 			;;
+		8)
+			PLATFORM_STR="VRX500"
+			;;
 		9)
 			PLATFORM_STR="VINAX1X (Vinax Revision 1.1 - 1.3)"
 			;;
