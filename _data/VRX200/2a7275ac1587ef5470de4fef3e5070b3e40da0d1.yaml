@@ -1,12 +1,12 @@
 downloads:
     -
-        url: https://www.telekom.de/hilfe/downloads/firmware-speedport-w921v-1.46.000.bin
+        url: https://www.telekom.de/hilfe/downloads/firmware-speedport-w-921v-1.48.000.bin
         extractionsteps: >
             <ol>
-            <li>Place the downloaded file in /tmp/</li>
-            <li>Download the source of the vdsl_fw_install tool from <a href="https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src;h=d544bc84a07f299ac1e513715301cae5fbd30923">https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src;h=d544bc84a07f299ac1e513715301cae5fbd30923</a></li>
+            <li>Rename downloaded file to <code>firmware-speedport-w921v-1.48.000.bin</code> and place it in <code>/tmp/</code></li>
+            <li>Download the source of the vdsl_fw_install tool from <a href="https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src/src;h=832f37887f93c18b2a46164eb5a7c55ae72b59f9;hb=HEAD">https://git.openwrt.org/?p=openwrt/openwrt.git;a=tree;f=package/kernel/lantiq/ltq-vdsl-fw/src/src;h=832f37887f93c18b2a46164eb5a7c55ae72b59f9;hb=HEAD</a></li>
             <li>In the source directory: make && ./w921v_fw_cutter</li>
-            <li>The result can then be found in /tmp/vr9_dsl_fw_annex_b.bin</li>
+            <li>The result can then be found in <code>/tmp/vr9_dsl_fw_annex_b.bin</code></li>
             </ol>
 filename: vr9_dsl_fw_annex_b.bin
 version: 5.6.8.6.1.7-5.6.7.A.1.2
