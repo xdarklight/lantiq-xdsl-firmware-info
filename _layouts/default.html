@@ -41,19 +41,17 @@
 		<div class="container-fluid">
 			<header class="py-4 px-2">
 				<nav class="navbar navbar-expand-lg bg-light">
-					<div class="navbar-brand">
+					<div class="navbar-brand text-wrap">
 						<h1>{{ page.title }}</h1>
 					</div>
 
-					<div class="collapse navbar-collapse">
-						<ul class="navbar-nav float-end">
-							{% assign sortedChips = site.data | sort %}
-							{% for chip in sortedChips %}
-								<li class="nav-item">
-									<a class="nav-link" href="#{{ chip[0] }}">{{ chip[0] }}</a>
-								</li>
-							{% endfor %}
-						</ul>
+					<ul class="navbar-nav float-end">
+						{% assign sortedChips = site.data | sort %}
+						{% for chip in sortedChips %}
+							<li class="nav-item">
+								<a class="nav-link" href="#{{ chip[0] }}">{{ chip[0] }}</a>
+							</li>
+						{% endfor %}
 					</ul>
 				</nav>
 			</header>
