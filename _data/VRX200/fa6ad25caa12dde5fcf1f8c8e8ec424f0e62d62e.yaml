@@ -1,0 +1,39 @@
+downloads:
+    -
+        url: https://www.openreach.co.uk/orpg/home/products/super-fastfibreaccess/super-fastfibreaccess/landrgnu/downloads/code/ECI_Arcadyan_VDSL_modem.zip
+        extractionsteps: >
+            <pre>
+                unzip "downloaded_filename"
+                tar -xf ECI Arcadyan VDSL vg3503j-gpl-open-source.tgz
+            </pre>
+            The xDSL firmware file can be found in "dl/dsl_vr9_firmware_xdsl-05.04.07.09.01.06_05.04.04.04.01.01.tar.gz"
+    -
+        url: https://fw.draytek.com.tw/Vigor130/Firmware/v3.8.5/Vigor130_v3.8.5_modem_1.zip
+        extractionsteps: >
+                <pre>
+                    unzip Vigor130_v3.8.5_modem_1.zip
+                    extract_dtv_fw.py v130_385_modem_1.all
+                    extract_ltq_xdsl_files.py v130_385_modem_1.all.fw
+                    mv xcpe_5.4.7.9.1.6_5.4.4.4.1.1.bin xcpe_hw.bin
+                </pre>
+                The extraction tools (python scripts) can be found in <a href="https://github.com/aimacintyre/xdsl-modem-fw-tools">https://github.com/aimacintyre/xdsl-modem-fw-tools</a>
+filename: xcpe_hw.bin
+version: 5.4.7.9.1.6-5.4.4.4.1.1
+sha1sum: fa6ad25caa12dde5fcf1f8c8e8ec424f0e62d62e
+filesize: 816668
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 6
+    APPLICATION_TYPE_STR: VDSL over ISDN
+    VERSION_STR: 4.7.9
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 4.4.4
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release

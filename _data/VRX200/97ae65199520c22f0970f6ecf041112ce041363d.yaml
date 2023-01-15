@@ -1,0 +1,20 @@
+filename: xcpe_5.7.2.D.0.7_5.7.0.E.0.1.bin
+version: 5.7.2.D.0.7-5.7.0.E.0.1
+sha1sum: 97ae65199520c22f0970f6ecf041112ce041363d
+filesize: 919740
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 7.2.D
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 7.0.E
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release

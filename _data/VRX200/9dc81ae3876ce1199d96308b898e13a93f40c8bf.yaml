@@ -1,0 +1,30 @@
+downloads:
+    -
+        url: https://fw.draytek.com.tw/Vigor130/Firmware/v3.8.5/Vigor130_v3.8.5_modem_7.zip
+        extractionsteps: >
+                <pre>
+                    unzip Vigor130_v3.8.5_modem_7.zip
+                    extract_dtv_fw.py v130_385_modem_7.all
+                    extract_ltq_xdsl_files.py v130_385_modem_7.all.fw
+                </pre>
+                The extraction tools (python scripts) can be found in <a href="https://github.com/aimacintyre/xdsl-modem-fw-tools">https://github.com/aimacintyre/xdsl-modem-fw-tools</a>
+filename: xcpe_5.6.7.5.1.7_5.6.2.3.0.1.bin
+version: 5.6.7.5.1.7-5.6.2.3.0.1
+sha1sum: 9dc81ae3876ce1199d96308b898e13a93f40c8bf
+filesize: 901132
+Firmware1:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: 6.7.5
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 5
+    PLATFORM_STR: VRX200
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: 6.2.3
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release

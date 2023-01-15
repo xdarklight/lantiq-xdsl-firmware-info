@@ -8,6 +8,16 @@ downloads:
                     binwalk TD-W8980v1_0.6.0_1.8_up_boot\(150514\)_2015-05-14_11.16.43.bin -e
                 </pre>
                 The xDSL firmware file can be found in "_TD-W8980v1_0.6.0_1.8_up_boot\(150514\)_2015-05-14_11.16.43.bin.extracted/squashfs-root/firmware/dsl_vr9_firmware_xdsl-05.04.08.00.00.06_05.04.04.04.00.01.bin"
+    -
+        url: https://fw.draytek.com.tw/Vigor130/Firmware/v3.8.5/Vigor130_v3.8.5_STD.zip
+        extractionsteps: >
+                <pre>
+                    unzip Vigor130_v3.8.5_STD.zip
+                    extract_dtv_fw.py v130_385_modem_STD.all
+                    extract_ltq_xdsl_files.py v130_385_modem_STD.all.fw
+                    mv xcpe_5.4.8.0.0.6_5.4.4.4.0.1.bin dsl_vr9_firmware_xdsl-05.04.08.00.00.06_05.04.04.04.00.01.bin
+                </pre>
+                The extraction tools (python scripts) can be found in <a href="https://github.com/aimacintyre/xdsl-modem-fw-tools">https://github.com/aimacintyre/xdsl-modem-fw-tools</a>
 filename: dsl_vr9_firmware_xdsl-05.04.08.00.00.06_05.04.04.04.00.01.bin
 version: 5.4.8.0.0.6-5.4.4.4.0.1
 sha1sum: 5badae26b9ac91de194e7de35f65c35c5e80e5a4
