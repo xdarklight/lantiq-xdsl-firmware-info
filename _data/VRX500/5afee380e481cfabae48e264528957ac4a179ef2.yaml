@@ -1,35 +1,30 @@
 downloads:
     -
-        url: https://gitlab.com/prpl-foundation/intel/dsl_vr11_firmware_xdsl/-/raw/8.5.2.10/xcpe_8D1507_8D0901.bin?inline=false
-        extractionsteps: >
-            Direct download of the firmware - no extra steps needed
-    -
         url: https://fw.draytek.com.tw/Vigor2765/Firmware/v4.4.2/Vigor2765_v4.4.2_MDM3.zip
         extractionsteps: >
                 <pre>
                     unzip Vigor2765_v4.4.2_MDM3.zip
                     extract_dtv_fw.py v2765_mdm3_442.all
                     extract_ltq_xdsl_files.py v2765_mdm3_442.all.fw
-                    mv xcpe_8.D.1.5.0.7_8.D.0.9.0.1.bin xcpe_8D1507_8D0901.bin
                 </pre>
                 The extraction tools (python scripts) can be found in <a href="https://github.com/aimacintyre/xdsl-modem-fw-tools">https://github.com/aimacintyre/xdsl-modem-fw-tools</a>
-filename: xcpe_8D1507_8D0901.bin
-version: 8.D.1.5.0.7-8.D.0.9.0.1
-sha1sum: 5c565b84591a14d544740ace8a673248ccc8fb0f
-filesize: 1005436
+filename: xcpe_8.D.1.9.1.7_8.D.0.C.1.1.bin
+version: 8.D.1.9.1.7-8.D.0.C.1.1
+sha1sum: 5afee380e481cfabae48e264528957ac4a179ef2
+filesize: 1028136
 Firmware1:
     PLATFORM: 8
     PLATFORM_STR: VRX500
     APPLICATION_TYPE: 7
     APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
-    VERSION_STR: D.1.5
-    RELEASE_STATUS: 0
-    RELEASE_STATUS_STR: Release
+    VERSION_STR: D.1.9
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
 Firmware2:
     PLATFORM: 8
     PLATFORM_STR: VRX500
     APPLICATION_TYPE: 1
     APPLICATION_TYPE_STR: ADSL Annex A
-    VERSION_STR: D.0.9
-    RELEASE_STATUS: 0
-    RELEASE_STATUS_STR: Release
+    VERSION_STR: D.0.C
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release

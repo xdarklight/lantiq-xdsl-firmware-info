@@ -1,0 +1,30 @@
+downloads:
+    -
+        url: https://fw.draytek.com.tw/Vigor2765/Firmware/v4.4.2/Vigor2765_v4.4.2_MDM1.zip
+        extractionsteps: >
+                <pre>
+                    unzip Vigor2765_v4.4.2_MDM1.zip
+                    extract_dtv_fw.py v2765_mdm1_442.all
+                    extract_ltq_xdsl_files.py v2765_mdm1_442.all.fw
+                </pre>
+                The extraction tools (python scripts) can be found in <a href="https://github.com/aimacintyre/xdsl-modem-fw-tools">https://github.com/aimacintyre/xdsl-modem-fw-tools</a>
+filename: xcpe_8.B.1.1.1.7_8.B.0.7.0.1.bin
+version: 8.B.1.1.1.7-8.B.0.7.0.1
+sha1sum: 6d93e5dbcaafc21b8224b5a5b8dadd700f1966bb
+filesize: 950752
+Firmware1:
+    PLATFORM: 8
+    PLATFORM_STR: VRX500
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: B.1.1
+    RELEASE_STATUS: 1
+    RELEASE_STATUS_STR: Pre-Release
+Firmware2:
+    PLATFORM: 8
+    PLATFORM_STR: VRX500
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: B.0.7
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
