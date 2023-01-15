@@ -1,9 +1,9 @@
 downloads:
     -
-        url: https://download.avm.de/fritzbox/fritzbox-7430/deutschland/fritz.os/FRITZ.Box_7430-07.21.image
+        url: https://download.avm.de/fritzbox/fritzbox-7430/deutschland/fritz.os/FRITZ.Box_7430-07.29.image
         extractionsteps: >
                 <pre>
-                    7z e FRITZ.Box_7430-07.21.image -r filesystem.image
+                    7z e FRITZ.Box_7430-07.29.image -r filesystem.image
                     unsquashfs4-avm-be filesystem.image -e filesystem_core.squashfs
 
                     cd squashfs-root
@@ -13,7 +13,14 @@ downloads:
                     bspatch vr9-B-dsl.bin vr9-A-dsl.bin vr9-A-dsl.bin.bsdiff
                 </pre>
 
-                NOTE: unsquashfs4-avm-be is part of https://github.com/Freetz-NG/freetz-ng/. You have to checkout the freetz-ng source and build the tools (make tools) to get the binary.
+                NOTE: unsquashfs4-avm-be is part of https://github.com/Freetz-NG/freetz-ng.
+                To get it you need to run the following commands to build the binary in the tools folder:
+                <pre>
+                    git clone https://github.com/Freetz-NG/freetz-ng
+                    cd freetz-ng
+                    make tools
+                </pre>
+
                 NOTE: p7zip version 15.09 or newer is required to extract the images.
 filename: vr9-A-dsl.bin
 version: 5.9.1.4.0.7-5.9.0.D.0.1
