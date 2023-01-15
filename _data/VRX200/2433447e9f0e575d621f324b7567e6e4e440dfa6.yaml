@@ -1,9 +1,9 @@
 downloads:
     -
-        url: http://btsupport.custhelp.com/app/answers/detail/a_id/47021/c/5703
+        url: https://www.bt.com/content/dam/bt/help/legacy-ug/downloads/Hub_5_sdk.zip
         extractionsteps: >
                 <pre>
-                    unzip "downloaded_filename"
+                    unzip Hub_5_sdk.zip
                     sh install.sh
                     # make your way through the installer
                     # get the password for the file from jpkg_sagem_homehub5_vrx.lic.gpl, it is the value from the last column
