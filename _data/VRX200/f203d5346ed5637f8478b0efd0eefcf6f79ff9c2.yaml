@@ -1,14 +1,13 @@
 downloads:
     -
-        url: https://static.tp-link.com/res/down/soft/TD-W8970B_V1_150526.zip
+        url: http://www.tp-link.com/resources/software/TD-W8970B(DE_V1_150526.zip
         extractionsteps: >
                 <pre>
-                    unzip TD-W8970B_V1_150526.zip
-                    cd TD-W8970B_V1_150526
-                    dd if=TD-W8970Bv1_0.6.0_2.9_up_boot\(150526\)_2015-05-26_15.55.38.bin of=01.squashfs ibs=1 skip=1442304 count=5995527
+                    unzip "TD-W8970B(DE_V1_150526.zip"
+                    dd if=TD-W8970B\(DE\)v1_0.6.0_2.11_up_boot\(150526\)_2015-05-26_15.16.02.bin of=01.squashfs ibs=1 skip=1442304
                     unsquashfs 01.squashfs
                 </pre>
-                The xDSL firmware file can be found in "TD-W8970B_V1_150526/squashfs-root/firmware/xcpe_551C16_554112_AnnexB.bin"
+                The xDSL firmware file can be found in <code>squashfs-root/firmware/xcpe_551C16_554112_AnnexB.bin</code>
 filename: xcpe_551C16_554112_AnnexB.bin
 version: 5.5.1.C.1.6-5.5.4.1.1.2
 sha1sum: f203d5346ed5637f8478b0efd0eefcf6f79ff9c2
