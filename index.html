@@ -8,7 +8,7 @@ title: Lantiq xDSL firmware information
 	{% assign sortedChips = site.data | sort %}
 	{% for chip in sortedChips %}
 		<div class="table-responsive w-100" style="padding-left: 0.75em; padding-top: 0.75em">
-			<h2>{{ chip[1].size }} xDSL firmware files for <b>{{ chip[0] }}</b>:</h2>
+			<h2 id="{{ chip[0] }}">{{ chip[1].size }} xDSL firmware files for <b>{{ chip[0] }}</b>:</h2>
 			<table class="table table-hover">
 				<caption>xDSL firmware files for {{ chip[0] }}</caption>
 				<thead>
