@@ -1,0 +1,25 @@
+downloads:
+    -
+        url: https://gitlab.com/prpl-foundation/intel/dsl_vr11_firmware_xdsl/-/raw/8.5.2.10/xcpe_8D1507_8D0901.bin?inline=false
+        extractionsteps: >
+            Direct download of the firmware - no extra steps needed
+filename: xcpe_8D1507_8D0901.bin
+version: 8.D.1.5.0.7-8.D.0.9.0.1
+sha1sum: 5c565b84591a14d544740ace8a673248ccc8fb0f
+filesize: 1005436
+Firmware1:
+    PLATFORM: 8
+    PLATFORM_STR: VRX500
+    APPLICATION_TYPE: 7
+    APPLICATION_TYPE_STR: VDSL over ISDN incl. vectoring support
+    VERSION_STR: D.1.5
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
+Firmware2:
+    PLATFORM: 8
+    PLATFORM_STR: VRX500
+    APPLICATION_TYPE: 1
+    APPLICATION_TYPE_STR: ADSL Annex A
+    VERSION_STR: D.0.9
+    RELEASE_STATUS: 0
+    RELEASE_STATUS_STR: Release
